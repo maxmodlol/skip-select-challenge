@@ -1,5 +1,5 @@
 import api from "../config/axios";
-import type { SkipOption } from "../types/SkipOption";
+import type { SkipOption, SkipOtionsDto } from "../types/SkipOption";
 import placeholder from "/skip-placeholder.jpg";
 
 const postcode = import.meta.env.VITE_DEFAULT_POSTCODE;
@@ -10,7 +10,7 @@ export async function getSkipOptions(): Promise<SkipOption[]> {
     params: { postcode, area },
   });
 
-  return data.map((s: any) => ({
+  return data.map((s: SkipOtionsDto) => ({
     id: s.id,
     yards: s.size,
     price: s.price_before_vat,
