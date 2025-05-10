@@ -111,7 +111,7 @@ Each commit will lint and format only your staged changes, preventing broken cod
 Create `.env.local` at project root:
 
 ```env
-VITE_VITE_API_BASE_URL=https://app.wewantwaste.co.uk
+VITE_API_BASE_URL=https://app.wewantwaste.co.uk
 VITE_DEFAULT_POSTCODE=NR32
 VITE_DEFAULT_AREA=Lowestoft
 ```
