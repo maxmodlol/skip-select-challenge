@@ -1,4 +1,4 @@
-import { Container, CircularProgress, Alert, Grid } from "@mui/material";
+import { Container, CircularProgress, Alert, Grid, Box } from "@mui/material";
 import { useState } from "react";
 import { useSkipOptions } from "@/hooks/useSkipOptions";
 import SkipCard from "@/component/SkipCard";
@@ -28,7 +28,18 @@ export default function App() {
     >
       {" "}
       <StepperStatic />
-      {isLoading && <CircularProgress />}
+      {isLoading && (
+        <Box
+          sx={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            my: 4,
+          }}
+        >
+          <CircularProgress />
+        </Box>
+      )}{" "}
       {isError && <Alert severity="error">Could not load skips.</Alert>}
       {data && (
         <Grid container spacing={{ xs: 2, md: 4 }}>
