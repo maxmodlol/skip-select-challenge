@@ -17,7 +17,6 @@ dist-ssr/
 
 # ─── Environment files (local) ────────────────────────────────────────
 # Ignore all .env* except the example
-.env
 .env.local
 .env.*.local
 !/.env.example
