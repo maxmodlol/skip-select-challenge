@@ -11,7 +11,7 @@ export function ColorModeProvider({ children }: { children: React.ReactNode }) {
     () => ({
       toggle: () => setMode((m) => (m === "light" ? "dark" : "light")),
     }),
-    []
+    [],
   );
 
   const theme = useMemo(() => makeTheme(mode), [mode]);

@@ -32,7 +32,7 @@ skip-select-challenge/
 │   │   │   └── types.ts
 │   │   └── StepperStatic/  # Custom Stepper + SpeedDial
 │   │       └── index.tsx
-│   ├── config/             # Vite and alias config (vite.config.ts)
+│   ├── config/             # Axios config
 │   ├── hooks/              # Custom React Query hooks
 │   │   └── useSkipOptions.ts
 │   ├── theme/              # MUI theme overrides, ModeToggle
@@ -74,10 +74,37 @@ cp .env.example .env.local
 
 ### Available Scripts
 
-- `pnpm dev` — run Vite dev server
+- `pnpm dev` — start the Vite dev server
 - `pnpm build` — build for production
 - `pnpm preview` — preview production build
-- `pnpm lint` — run ESLint
+- `pnpm lint` — run ESLint and fix issues
+- `pnpm format` — run Prettier to format code
+
+### Pre-commit Hooks (Husky + lint-staged)
+
+Automatically enforce code quality on commit:
+
+```bash
+pnpm dlx husky install             # sets up Git hooks
+pnpm dlx husky add .husky/pre-commit "pnpm lint-staged"
+```
+
+In `package.json`:
+
+```json
+"lint-staged": {
+  "src/**/*.{ts,tsx,js,jsx}": [
+    "eslint --fix",
+    "git add"
+  ],
+  "src/**/*.{ts,tsx,js,jsx,json,css,md}": [
+    "prettier --write",
+    "git add"
+  ]
+}
+```
+
+Each commit will lint and format only your staged changes, preventing broken code from entering the repo.
 
 ## 🌐 Environment Variables
 

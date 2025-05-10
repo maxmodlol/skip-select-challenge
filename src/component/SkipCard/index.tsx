@@ -113,7 +113,7 @@ const SkipCard: React.FC<SkipCardProps> = ({ skip, selected, onSelect }) => {
                 textAlign: "center",
                 bgcolor: "secondary.main",
                 color: theme.palette.getContrastText(
-                  theme.palette.secondary.main
+                  theme.palette.secondary.main,
                 ),
                 borderRadius: 1.5,
                 fontWeight: 600,
