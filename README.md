@@ -84,8 +84,9 @@ cp .env.example .env.local
 Create `.env.local` at project root:
 
 ```env
-VITE_API_URL=https://app.wewantwaste.co.uk/api
-```
+VITE_API_BASE_URL=https://app.wewantwaste.co.uk
+VITE_DEFAULT_POSTCODE=NR32
+VITE_DEFAULT_AREA=Lowestoft```
 
 ## 📐 Approach & Decisions
 
