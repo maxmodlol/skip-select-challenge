@@ -6,7 +6,7 @@ const postcode = import.meta.env.VITE_DEFAULT_POSTCODE;
 const area = import.meta.env.VITE_DEFAULT_AREA;
 
 export async function getSkipOptions(): Promise<SkipOption[]> {
-  const { data } = await api.get("/api/skips/by-location", {
+  const { data } = await api.get("/skips/by-location", {
     params: { postcode, area },
   });
 
