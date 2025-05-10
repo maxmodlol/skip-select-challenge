@@ -1,8 +1,12 @@
 {
   "setupTasks": [
+        {
+      "name": "pull changes",
+      "command": "git pull",
+    },
     {
       "name": "Installing Dependencies",
-      "command": "pnpm install"
+      "command": "pnpm install",
     }
   ],
 
